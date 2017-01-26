@@ -1,0 +1,23 @@
+Module: Angular apps => one module for single purpose
+
+Component: Controller class => render itself and configure dependency injection
+
+			only one component per DOM
+			
+Template: The component's view			
+
+Metadata: Tell Angular that MyComponent is a component
+|
+-> @Component create the component and its view
+	|
+	-> selector: 'mylist' find<mylist> tag
+	
+Directive: is a class that represents the metadata
+
+Data Binding: 1. Interpolation: displays the component value within the div tags.
+
+			  2. Property Binding:	pass the property from the parent to property of the child.
+
+			  3. Event Binding:	when you click on the components method name.
+	
+			  4. Two-way Binding: use the ngModel

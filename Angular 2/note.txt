@@ -1,0 +1,15 @@
+Q: What is npm
+A: NodeJs package manager
+
+Q: ts file => TypeScript
+A: being deployable where a regular JavaScript application would run
+
+i: transpile => compile from one language to another 
+
+ii: start Angular 2 => cmd -> npm start (start lite-server[static server])
+
+iii: render => it means a final result from a give model/template
+
+crtl + C => stop batch service
+
+*ngFor => For loop
