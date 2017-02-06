@@ -26,3 +26,5 @@ status	             為真時的 CSS Class	  為假時的 CSS Class
 
 syntax: in HTML
 [(ngModel)]="model.name" 
+
+
