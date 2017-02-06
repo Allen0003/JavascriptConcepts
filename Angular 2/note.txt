@@ -4,12 +4,25 @@ A: NodeJs package manager
 Q: ts file => TypeScript
 A: being deployable where a regular JavaScript application would run
 
-i: transpile => compile from one language to another 
+  i: transpile => compile from one language to another 
 
-ii: start Angular 2 => cmd -> npm start (start lite-server[static server])
+  ii: start Angular 2 => cmd -> npm start (start lite-server[static server])
 
-iii: render => it means a final result from a give model/template
+  iii: render => it means a final result from a give model/template
 
 crtl + C => stop batch service
 
 *ngFor => For loop
+syntax: in HTML
+<option *ngFor="#p of powers" [value]="p">{{p}}</option>
+
+ngModel = double binding and provide three classes for controlling
+
+status	             為真時的 CSS Class	  為假時的 CSS Class
+控制項已經被訪問過	    ng-touched        	  ng-untouched
+控制項的值已經變化	    ng-dirty	            ng-pristine
+控制項的值是有效的	    ng-valid	            ng-invalid
+
+
+syntax: in HTML
+[(ngModel)]="model.name" 
