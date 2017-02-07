@@ -28,3 +28,33 @@ syntax: in HTML
 [(ngModel)]="model.name" 
 
 
+The * is a bit of syntactic sugar that makes it easier to read and write directives 
+that modify HTML layout with the help of templates. 
+
+NgFor, NgIf, and NgSwitch all add and remove element subtrees that are wrapped 
+in <template> tags.
+
+
+We didn't see the <template> tags because the * prefix syntax allowed 
+us to skip those tags and focus directly on the HTML element that we are including, 
+excluding, or repeating.
+
+
+Expanding *ngFor
+
+Angular 內部會建立 FormControls 並註冊在 NgForm directive 中，
+讓 Angular 附加在 tag 上。每個 FormControl 會被註冊在我們所設定的 name 屬性下面，
+
+
+NgForm directive:
+
+什麼 NgForm directive？ 我們沒有新增過 NgForm directive 啊！
+其實是 Angular 幫我們做了，它自動建立了 NgForm directive，並且把它附加到 <form> 標籤上。
+NgForm directive 為普通的 form 元素擴充了額外的特性。
+它持有我們透過 ngModel directive 和 name 屬性為各個元素建立的那些控制項
+Class，並且監視它們的屬性變化，包括有效性。
+它還有自己的 valid 屬性，只有當每一個被包含的控制項都有效時，它才有效。
+
+
+如果沒有 Angular NgForm 的幫助，
+我們又該怎麼讓按鈕的禁用 / 啟用狀態和表單的有效性關聯起來呢？
