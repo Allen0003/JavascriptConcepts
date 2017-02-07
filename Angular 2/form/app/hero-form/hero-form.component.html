@@ -1,0 +1,69 @@
+<div class="container">
+    {{diagnostic}}
+    <div [hidden]="submitted">
+        <!--當我們點擊提交按鈕時， submitted 標誌會變成 true -->
+        <h1>Hero Form</h1>
+        <!--最後，我們定義了一個template 參考變數 #heroForm，
+        並且把它初始化為 “ngForm” 。這個 heroForm
+        變數現在引用的是 NgForm directive，它代表的是表單的整體。-->
+        <form *ngIf="active" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <!--在透過 NgIf 繫結到 active 變數之後，點擊 「 New Hero 」
+            將從 DOM 中移除這個表單，並在一眨眼的功夫重建它。
+            重新建立的表單處於 「全新」 狀態。錯誤訊息被隱藏了。
+            這只是一個臨時的變通方案，將來我們還會有一個更合適的方案來重置表單。-->
+            <div class="form-group">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" required [(ngModel)]="model.id" ngControl="id">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" required [(ngModel)]="model.name" ngControl="name" #name="ngForm">
+                <!--add one more div for infor user the missing column-->
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Name is required
+                </div>
+
+                <!--double binding already!! You can type word in the input-->
+                TODO: remove this: {{model.name}}
+
+            </div>
+            <div class="form-group">
+                <label for="alterEgo">Alter Ego</label> <input type="text" class="form-control" [(ngModel)]="model.alterEgo" name="alterEgo">
+            </div>
+
+            <div class="form-group">
+                <label for="power">Hero Power</label>
+                <select class="form-control" [(ngModel)]="model.power" name="power" required>
+                  <option *ngFor="#p of powers" [value]="p">{{p}}</option>
+			             </select>
+            </div>
+
+            <button type="submit" class="btn btn-default" [disabled]="!heroForm.form.valid">Submit</button>
+
+            <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+
+        </form>
+    </div>
+
+    <!--after the first submit-->
+
+    <div [hidden]="!submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+            <div class="col-xs-3">Name</div>
+            <div class="col-xs-9  pull-left">{{ model.name }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Alter Ego</div>
+            <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Power</div>
+            <div class="col-xs-9 pull-left">{{ model.power }}</div>
+        </div>
+        <br>
+        <button class="btn btn-default" (click)="submitted=false">Edit</button>
+    </div>
+
+</div>
