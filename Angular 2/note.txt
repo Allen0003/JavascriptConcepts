@@ -58,3 +58,9 @@ Class，並且監視它們的屬性變化，包括有效性。
 
 如果沒有 Angular NgForm 的幫助，
 我們又該怎麼讓按鈕的禁用 / 啟用狀態和表單的有效性關聯起來呢？
+
+
+'Services' are JavaScript functions that are responsible for doing a specific task only. Angular services are injected using Dependency Injection mechanism and include the value, function or feature which is required by the application.
+
+
+
