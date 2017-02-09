@@ -74,4 +74,6 @@ How to mark a class as a service?
 
 @Injectable() specifies class is available to an injector for instantiation and an injector will display an error when trying to instantiate a class that is not marked as @Injectable()
 
+Everything injected using Angular 2’s DI is already a Singleton
+
 
