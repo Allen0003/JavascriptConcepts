@@ -76,4 +76,5 @@ How to mark a class as a service?
 
 Everything injected using Angular 2’s DI is already a Singleton
 
-
+Q: How to inject a service in Angular?
+A: Create a provider either on your @NgModule, @Component, or @Directive using a type or a string as provider token.
