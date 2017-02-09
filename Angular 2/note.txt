@@ -69,3 +69,9 @@ In real life Data comes from Server. (e.g. JSON file)
 Service is the best way to handle this.
 Service is the best place from where we can bring our external Data to our app. Or do some repetitive task or calculations.
 
+How to mark a class as a service?
+* We need to declare a Decorator called Injectable.
+
+@Injectable() specifies class is available to an injector for instantiation and an injector will display an error when trying to instantiate a class that is not marked as @Injectable()
+
+
