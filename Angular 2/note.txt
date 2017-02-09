@@ -63,4 +63,5 @@ Class，並且監視它們的屬性變化，包括有效性。
 'Services' are JavaScript functions that are responsible for doing a specific task only. Angular services are injected using Dependency Injection mechanism and include the value, function or feature which is required by the application.
 
 
+As you may already know, we can create Components in angular 2 and nest multiple Components together with selectors. Once our Components are nested we need to manipulate some Data and maybe this Data is not just a variable within our Component. Or we want to do some calculations.
 
