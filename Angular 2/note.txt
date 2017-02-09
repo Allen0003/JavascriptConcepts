@@ -65,3 +65,7 @@ Class，並且監視它們的屬性變化，包括有效性。
 
 As you may already know, we can create Components in angular 2 and nest multiple Components together with selectors. Once our Components are nested we need to manipulate some Data and maybe this Data is not just a variable within our Component. Or we want to do some calculations.
 
+In real life Data comes from Server. (e.g. JSON file)
+Service is the best way to handle this.
+Service is the best place from where we can bring our external Data to our app. Or do some repetitive task or calculations.
+
