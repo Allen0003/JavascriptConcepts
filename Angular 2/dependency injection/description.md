@@ -1,8 +1,9 @@
-put the parametes in the constructor is Dependency injection.
+put the parametes in the constructor is Dependency injection (Constructor injection).
 It has more flexibility, testability, and maintainability.
+
 	constructor(engine, doors) {
-		this.engine = new Engine();
-		this.doors = new Doors();
+		this.engine = engine;
+		this.doors = doors;
 	}
 
 
