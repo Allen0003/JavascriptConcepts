@@ -78,3 +78,7 @@ Everything injected using Angular 2’s DI is already a Singleton
 
 Q: How to inject a service in Angular?
 A: Create a provider either on your @NgModule, @Component, or @Directive using a type or a string as provider token.
+
+
+ the difference between decorators and annotations
+https://blog.thoughtram.io/angular/2015/05/03/the-difference-between-annotations-and-decorators.html
