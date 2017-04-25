@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+
+<head>
+    <title> Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+    </br>
+
+    <div>
+        <h1 ng-cloak>test </h1>
+
+    </div>
+    <h1>
+    <div ng-repeat="note in ctrl.notes">
+        <span class="label"> {{note.label}}</span>
+        <span class="status" ng-bind="note.done"></span>
+    </div>
+    </h1>
+    <script src="Angular.js">
+    </script>
+
+    <script type="text/javascript">
+        angular.module('notesApp', []).controller('MainCtrl', [function() {
+            //use self (proxy)
+            var self = this;
+            self.notes = [{
+                    id: 1,
+                    label: 'First Note',
+                    done: false
+                },
+                {
+                    id: 2,
+                    label: 'Second Note',
+                    done: false
+                },
+                {
+                    id: 3,
+                    label: 'Done Note',
+                    done: true
+                },
+                {
+                    id: 4,
+                    label: 'last Note',
+                    done: false
+                }
+            ];
+        }]);
+    </script>
+</body>
+
+</html>
