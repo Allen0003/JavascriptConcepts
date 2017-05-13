@@ -1,0 +1,7 @@
+XMLHttpRequest --> XMLHttpRequest (XHR) is an API in the form of an object whose methods transfer data between a web browser and a web server.
+
+
+Chrome, browser is blocking it as it usually allows a request in the same origin for security reasons.
+
+This is also called Cross-Origin XMLHttpRequest.
+
