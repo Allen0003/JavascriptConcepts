@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<div ng-init="location = 'India'">
+		<select ng-model="location">
+			<option value ="USA">USA</option>
+			<option value ="India">India</option>
+			<option value ="Other">None of the above</option>
+		</select>
+	</div>
+
+	<p></p>
+	<div>
+		<select ng-model="ctrl.selectedCountryId" ng-options="c.id as c.label for c in ctrl.countries">
+
+		</select> Selected Country ID : {{ctrl.selectedCountryId}}
+	</div>
+
+	<p></p>
+	<div>
+		<select ng-model="ctrl.selectedCountry" ng-options="c.label for c in ctrl.countries">
+			</select> Selected Country : {{ctrl.selectedCountry}}
+	</div>
+
+
+	<script src="angular.js">
+	</script>
+
+	<script type="text/javascript">
+		angular.module('notesApp', []).controller('MainCtrl', [function() {
+			var self = this;
+			self.countries = [{
+				label: 'USA',
+				id: 1
+			}, {
+				label: 'India',
+				id: 2
+			}, {
+				label: 'Other',
+				id: 3
+			}];
+
+			self.selectedCountryId = 1;
+			self.selectedCountry = self.countries[1];
+		}]);
+	</script>
+</body>
+
+</html>

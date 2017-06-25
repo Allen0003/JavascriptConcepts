@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+<title>Notes App</title>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+
+
+	<form ng-submit="ctrl.submit1()">
+		form1:
+		<input type="text" ng-model="ctrl.username" /> <input type="password"
+			ng-model="ctrl.password" /> <input type="submit" valie="Submit">
+	</form>
+
+	<form ng-submit="ctrl.submit2()">
+		form2:
+		<input type="text" ng-model="ctrl.user.username" /> <input
+			type="password" ng-model="ctrl.user.password" /> <input
+			type="submit" valie="Submit">
+	</form>
+
+	<script src="angular.js">
+    </script>
+
+	<script type="text/javascript">
+        angular.module('notesApp', []).controller('MainCtrl', [function() {
+            var self = this;
+					self.submit1 = function(){
+							var user = { username: self.username , password: self.password };
+							console.log('First form submit with ', user);
+						};
+						self.submit2 = function(){
+							console.log('Second form submit with ',self.user);
+						};
+        }]);
+    </script>
+</body>
+</html>

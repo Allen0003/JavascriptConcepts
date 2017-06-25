@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+
+<head>
+	<title>Notes App</title>
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+
+	<div ng-init="user = {gender:'female'}">
+		<input type="radio" name="gender" ng-model="user.gender" value="male">Male
+		<input type="radio" name="gender" ng-model="user.gender" value="female">Female
+	</div>
+	</br>
+	<div ng-init="otherGender = 'other'">
+		<input type="radio" name="gender1" ng-model="user.gender1" value="male">Male
+		<input type="radio" name="gender1" ng-model="user.gender1" value="female">Female
+		<input type="radio" name="gender1" ng-model="user.gender1" ng-value="otherGender">{{otherGender}}
+	</div>
+
+
+	<script src="angular.js">
+	</script>
+
+	<script type="text/javascript">
+		angular.module('notesApp', []).controller('MainCtrl', [function() {
+			var self = this;
+
+		}])
+	</script>
+</body>
+
+</html>
