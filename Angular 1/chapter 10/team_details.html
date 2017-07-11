@@ -1,0 +1,57 @@
+<div class="team-details-container card">
+
+    <div class="team-logo">
+        <img title="Image Courtesy:Wikipedia" ng-src="{{teamDetailsCtrl.team.logoUrl}}">
+    </div>
+
+    <div class="name">
+        <span ng-bind="teamDetailsCtrl.team.name"></span>
+        <span ng-bind="teamDetailsCtrl.team.fifaCode"></span>
+    </div>
+
+    <div class="detail">
+        <div class="label">
+            <span>Nickname</span>
+        </div>
+        <div class="title">
+            <span ng-bind="teamDetailsCtrl.team.nickname"></span>
+        </div>
+    </div>
+    <div class="detail">
+        <div class="label">
+            <span>FIFA Ranking</sapn>
+        </div>
+        <div class="title">
+            <span ng-bind = "teamDetailsCtrl.team.fifaRanking"></sapn>
+        </div>
+    </div>
+
+    <div class="detail">
+        <div class="label">
+            <span>Assocaiation</sapn>
+        </div>
+        <div class="title">
+            <span ng-bind = "teamDetailsCtrl.team.association"></sapn>
+        </div>
+    </div>
+
+
+    <div class="detail">
+        <div class="label">
+            <span>Head Coach</sapn>
+        </div>
+        <div class="title">
+            <span ng-bind = "teamDetailsCtrl.team.headCoach"></sapn>
+        </div>
+    </div>
+
+    <div class="detail">
+        <div class="label">
+            <span>Captain</sapn>
+        </div>
+        <div class="title">
+            <span ng-bind = "teamDetailsCtrl.team.captain"></sapn>
+        </div>
+    </div>
+
+</div>
