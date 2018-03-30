@@ -1,0 +1,45 @@
+
+Observer Pattern
+Observer Pattern 其實很常遇到，在許多 API 的設計上都用了 Observer Pattern 實作，最簡單的例子就是 DOM 物件的事件監聽，程式碼如下
+
+function clickHandler(event) {
+	console.log('user click!');
+}
+
+document.body.addEventListener('click', clickHandler)
+
+
+Iterator Pattern
+Iterator 是一個物件，它的就像是一個指針(pointer)，指向一個資料結構並產生一個序列(sequence)，這個序列會有資料結構中的所有元素(element)。
+
+var arr = [1, 2, 3];
+
+var iterator = arr[Symbol.iterator]();
+
+iterator.next();
+// { value: 1, done: false }
+iterator.next();
+// { value: 2, done: false }
+iterator.next();
+// { value: 3, done: false }
+iterator.next();
+// { value: undefined, done: true }
+
+
+
+補充: 延遲運算(Lazy evaluation)
+延遲運算，或說 call-by-need，是一種運算策略(evaluation strategy)，簡單來說我們延遲一個表達式的運算時機直到真正需要它的值在做運算
+
+
+
+Observable
+在了解 Observer 跟 Iterator 後，不知道大家有沒有發現其實 Observer 跟 Iterator 有個共通的特性，就是他們都是 漸進式(progressive) 的取得資料，差別只在於 Observer 是生產者(Producer)推送資料(push)，而 Iterator 是消費者(Consumer)要求資料(pull)!
+
+Observable 其實就是這兩個 Pattern 思想的結合，Observable 具備生產者推送資料的特性，同時能像序列，擁有序列處理資料的方法(map, filter...)！
+
+Observable 裡面有 observer
+
+觀察者 Observer
+Observable 可以被訂閱(subscribe)，或說可以被觀察，而訂閱 Observable 的物件又稱為 **觀察者(Observer)**。觀察者是一個具有三個方法(method)的物件，每當 Observable 發生事件時，便會呼叫觀察者相對應的方法。
+
+https://ithelp.ithome.com.tw/users/20103367/ironman/1199
