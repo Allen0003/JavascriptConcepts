@@ -1,0 +1,151 @@
+
+1. 可以多重繼承
+
+interface Shape {
+    area(): number;
+}
+
+interface Color {
+    RGB: string;
+}
+
+interface Thing extends Color, Shape {
+}
+
+2. Directive
+
+共有三種 Directive：
+
+2.1 Components directives： 用來控制 HTML Template。是我們最常用到的 Directive。
+2.2 結構性 directives：例如 ngFor (用來改變 HTML DOM，可以是增加或刪掉) <div *ngFor="let hero of heroes">{{hero.fullName}}</div>
+2.3 屬性 directives： 例如 ngStyle (用來改變 Elements 的 Style) <p [style.background]="'lime'">I am green with envy!</p>
+
+
+3. Data Binding
+
+One Way Binding
+可以是任何 HTML property。像是innerText style。
+
+Two Way Binding
+可以由使用者控制，像是選單、輸入，也可以由程式控制。
+
+4. @Injectable()
+
+照自面上意思就是要注入這個 class，但之前沒有使用 @Injectable 也可以使用 DI 呀？
+這是因為 @Component、@Directive、@Pipe，都是 Injectable 的子型。
+
+5. PIPES
+
+有些 Pipe 我們可能會一直用到，例如日期轉換、語言翻譯，這些可能在很多個 Components 中都有用到，我們能做到讓自己定義的 Pipe 就像一些內建的 Pipe 在每個 Component 中都可以使用。
+
+6. 認證守衛
+
+@Injectable()
+export class AuthGuard implements CanActivate {
+  canActivate() {
+    console.log('AuthGuard#canActivate called');
+    return true;
+
+    this.router.navigate(['/login']);
+  }
+}
+
+const adminRoutes: Routes = [
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        children: [
+          { path: 'crises', component: ManageCrisesComponent },
+          { path: 'heroes', component: ManageHeroesComponent },
+          { path: '', component: AdminDashboardComponent }
+        ],
+      }
+    ]
+  }
+];
+
+7. 嵌入式設計
+
+嵌入式設計就是將 B 的內容嵌入進去 A ，A 文件中預留一個空間就是留給 B 放東西用的。大概就長這樣：
+
+<div class="card">
+    <div class="card-header">
+        {{ header }}
+    </div>
+
+    <!-- 單一嵌入點 -->
+    <ng-content></ng-content>
+
+    <div class="card-footer">
+        {{ footer }}
+    </div>
+</div>
+
+
+
+多點嵌入
+
+<div class="card">
+    <div class="card-header">
+    <!-- header slot here -->
+        <ng-content select="card-header"></ng-content>
+    </div>
+    <!-- body slot here -->
+    <ng-content select="card-body"></ng-content>
+    <div class="card-footer">
+    <!-- footer -->
+        <ng-content select="card-footer"></ng-content>
+    </div>
+</div>
+
+
+8. Module 
+
+是一個把彼此互相關聯的 components、directives、pipes 和 services 整合的機制
+
+一個模組又由點像是類別 ( Class )，一樣也有 public 和 private 的概念。
+
+我們用 NgModule 來定義是模組。
+
+//app/app.module.ts
+
+import { NgModule } from '@angular/core';
+
+@NgModule({
+  imports: [ ... ],
+  declarations: [ ... ],
+  bootstrap: [ ... ]
+})
+export class AppModule { }
+NgModule 這個裝飾器 ( decorator ) 需要至少三個特性： import、declaration 和 bootstrap。
+
+import：預期有一個陣列包含要引入的所有陣列。
+declaration：預期有一個陣列包含所有這個模組要用的 components、directives 和 pipes。
+bootstrap：我們用來定義根組件 (root component)，雖然可以是一個陣列，但通常我們只會定義一個而已。根組件會再引入其他更多的組件。
+
+一個程式基本上只會有一個 root module，搭配 0 個或許多個 feature module。要啟動程式一定要有 root module，判別方式是 root module 會有 NgModule 裝飾器，且他會引入 BrowserModule。
+
+9. Mobile App
+
+我現在會 Angular，再以 Hybrid App 方式開發，就可以用到我的專長啦！！
+我們採用 Cordova + Ionic + Angular 2 來開發。
+
+Cordova 是混合式框架
+Ionic 是基於 Cordova 的高階 UI 框架
+Angular 2 是網頁技術框架
+https://ithelp.ithome.com.tw/articles/10188551
+
+
+10. @Directive
+
+Directive (指令) 在 Angular 可以指很多種情形
+
+@Directive({
+  selector: '[myHighlight]'
+})
+
+<p [myHighlight]="color">...</p> // 單向綁定
