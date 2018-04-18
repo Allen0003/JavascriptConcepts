@@ -1,0 +1,7 @@
+Webpack 是一套Javascript模組打包工具（is a module bundler for your JavaScript.）
+後來由於越來越多人使用後，變成為Javascript的管理工具（壓縮、合併等工作）。
+
+
+NPM
+
+全名是 Node Package Manager，原本目的是node.js管理工具，隨著npm成為主流的 JavaScript 套件發佈平台，很多前端專案都依賴於 npm 上的套件，或者透過npm發佈套件，透過 webpack可以直接在前端的程式碼中直接引用npm的套件。
