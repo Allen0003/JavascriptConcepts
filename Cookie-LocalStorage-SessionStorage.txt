@@ -1,0 +1,7 @@
+
+
+Cookie / LocalStorage / SessionStorage
+
+Cookie --> client side --> send with HTTP
+LocalStorage (shopping cart)--> client side  --> don't send with HTTP  --> exist for good unless delete it
+SessionStorage --> client side  --> don't send with HTTP --> close browser, it disappears
