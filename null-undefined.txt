@@ -1,0 +1,21 @@
+
+
+null / undefined
+
+In JavaScript, undefined means a variable has been declared but has not yet been assigned a value, such as:
+
+var TestVar;
+alert(TestVar); //shows undefined
+alert(typeof TestVar); //shows undefined
+null is an assignment value. It can be assigned to a variable as a representation of no value:
+
+var TestVar = null;
+alert(TestVar); //shows null
+alert(typeof TestVar); //shows object
+From the preceding examples, it is clear that undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object.
+
+null === undefined // false
+null == undefined // true
+null === null // true
+
+https://stackoverflow.com/questions/5076944/what-is-the-difference-between-null-and-undefined-in-javascript
