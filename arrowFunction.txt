@@ -1,0 +1,45 @@
+
+
+function timesTwo(params) {  return params * 2}
+
+
+params => params * 2
+function timesTwo(params) {
+  return params * 2
+}
+
+JS：
+arrow fn / Fn
+
+arrow fn
+
+1. Harder to debug
+When you get an error, you will not be able to trace the name of the function or the exact line number where it occurred.
+
+2. No self-referencing
+
+If your function needs to have a self-reference at any point (e.g. recursion, event handler that needs to unbind), it will not work.
+
+
+
+// ES5
+var obj = {
+  id: 42,
+  counter: function counter() {
+    setTimeout(function() {
+      console.log(this.id);
+    }.bind(this), 1000);
+  }
+};
+
+ by default this would be undefined.
+
+// ES6
+var obj = {
+  id: 42,
+  counter: function counter() {
+    setTimeout(() => {
+      console.log(this.id);
+    }, 1000);
+  }
+};
