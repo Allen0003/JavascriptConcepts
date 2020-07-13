@@ -1,0 +1,33 @@
+
+
+
+Cross-Origin Resource Sharing (CORS)
+
+
+An example of a cross-origin request: the front-end JavaScript code served from https://domain-a.com uses XMLHttpRequest to make a request for https://domain-b.com/data.json.
+
+--> http://domain-a.com <img> src =http://domain-b.com/image.jpg
+
+
+solve:
+
+add Access-Control-Allow-Origin on the server side 
+
+alternative solution: JSONP (JSON with Padding)
+
+
+$.ajax({
+  url: "http://www.pureexample.com/backend/ajax_crossdomain.aspx",
+  dataType: 'jsonp',  //use jsonp data type in order to perform cross domain ajax
+  crossDomain: true,
+  data: data,
+  success: callback,
+  error: callback
+});
+
+
+
+
+
+
+
