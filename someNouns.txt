@@ -2,3 +2,23 @@
 *******PWA (Progressive Web App)
 
 A progressive web application (PWA) is a type of application software delivered through the web, built using common web technologies including HTML, CSS and JavaScript. It is intended to work on any platform that uses a standards-compliant browser.
+
+
+****** put and post 
+
+An HTTP PUT is supposed to accept the body of the request, and then store that at the resource identified by the URI.
+
+An HTTP POST is more general. It is supposed to initiate an action on the server. That action could be to store the request body at the resource identified by the URI, or it could be a different URI, or it could be a different action.
+
+PUT is like a file upload. A put to a URI affects exactly that URI. A POST to a URI could have any effect at all.
+
+PUT implies putting a resource - completely replacing whatever is available at the given URL with a different thing.
+exactly that one
+
+POST updates a resource, adds a subsidiary resource, or causes a change. A POST is not idempotent, in the way that x++ is not idempotent.
+
+
+POST /expense-report
+or:
+
+PUT  /expense-report/10929
