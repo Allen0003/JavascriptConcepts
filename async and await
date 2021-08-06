@@ -1,0 +1,23 @@
+
+“An async function can contain an await expression that pauses the execution of the async function and waits for the passed Promise's resolution, 
+and then resumes the async function's execution and returns the resolved value. Remember, the await keyword is only valid inside async functions.”
+
+https://betterprogramming.pub/understanding-async-await-in-javascript-1d81bb079b2c
+
+General Syntax of Using async-await
+
+async function testAsync() {
+  for (var i = 0; i < 5; i++) {
+    try {
+      result1 = await promiseTRRARNOSG();
+      console.log("Result 1 ", result1);
+      result2 = await promiseTRRARNOSG();
+      console.log("Result 2 ", result2);
+    } catch (e) {
+      console.log("Error", e);
+    } finally {
+      console.log("This is done");
+    }
+  }
+}
+testAsync();
